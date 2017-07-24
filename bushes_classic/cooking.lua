@@ -21,7 +21,8 @@ minetest.register_craftitem(":bushes:sugar", {
 	description = S("Sugar"),
 	inventory_image = "bushes_sugar.png",
 	on_use = minetest.item_eat(1),
-	groups = {food_sugar=1}
+	groups = {food_sugar=1},
+	spoil=100,
 })
 
 minetest.register_craft({
@@ -38,6 +39,7 @@ for i, berry in ipairs(bushes_classic.bushes) do
 		description = S("Raw "..desc.." pie"),
 		inventory_image = "bushes_"..berry.."_pie_raw.png",
 		on_use = minetest.item_eat(4),
+		spoil=1,
 	})
 
 	if berry ~= "mixed_berry" then
@@ -52,7 +54,8 @@ for i, berry in ipairs(bushes_classic.bushes) do
 				description = S("Strawberry"),
 				inventory_image = "bushes_"..berry..".png",
 				on_use = minetest.item_eat(2),
-				groups = {berry=1, strawberry=1}
+				groups = {berry=1, strawberry=1},
+				spoil=5,
 			})
 			minetest.register_alias("bushes:strawberry", "farming_plus:strawberry_item")
 
@@ -61,7 +64,8 @@ for i, berry in ipairs(bushes_classic.bushes) do
 				description = S("Blueberry"),
 				inventory_image = "bushes_"..berry..".png",
 				on_use = minetest.item_eat(1),
-				groups = {berry=1, blueberry=1}
+				groups = {berry=1, blueberry=1},
+				spoil=5,
 			})
 			minetest.register_alias("bushes:blueberry", "farming:blueberries")
 
@@ -70,7 +74,8 @@ for i, berry in ipairs(bushes_classic.bushes) do
 				description = S("Raspberry"),
 				inventory_image = "bushes_"..berry..".png",
 				on_use = minetest.item_eat(1),
-				groups = {berry=1, raspberry=1}
+				groups = {berry=1, raspberry=1},
+				spoil=5,
 			})
 			minetest.register_alias("bushes:raspberry", "farming:raspberries")
 
@@ -80,6 +85,7 @@ for i, berry in ipairs(bushes_classic.bushes) do
 				inventory_image = "bushes_"..berry..".png",
 				groups = {berry = 1, [berry] = 1},
 				on_use = minetest.item_eat(1),
+				spoil=5,
 			})
 		end
 
@@ -98,6 +104,7 @@ for i, berry in ipairs(bushes_classic.bushes) do
 		description = S("Cooked "..desc.." pie"),
 		inventory_image = "bushes_"..berry.."_pie_cooked.png",
 		on_use = minetest.item_eat(6),
+		spoil=3,
 	})
 
 	minetest.register_craft({
@@ -113,6 +120,7 @@ for i, berry in ipairs(bushes_classic.bushes) do
 		description = S("Slice of "..desc.." pie"),
 		inventory_image = "bushes_"..berry.."_pie_slice.png",
 		on_use = minetest.item_eat(1),
+		spoil=3,
 	})
 
 	minetest.register_craft({

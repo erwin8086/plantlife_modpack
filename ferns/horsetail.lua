@@ -60,6 +60,7 @@ local function create_nodes()
 			},
 			on_use = node_on_use,
 			drop = node_drop,
+			spoil=5,
 		})
 	end
 end

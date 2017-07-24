@@ -30,6 +30,7 @@ minetest.register_craftitem("ferns:fiddlehead", {
 	description = "Fiddlehead",
 	inventory_image = "ferns_fiddlehead.png",
 	on_use = minetest.item_eat(-1), -- slightly poisonous when raw
+	spoil=5,
 })
 minetest.register_craft({
 	type = "cooking",
@@ -41,6 +42,7 @@ minetest.register_craftitem("ferns:fiddlehead_roasted", {
 	description = "Roasted Fiddlehead",
 	inventory_image = "ferns_fiddlehead_roasted.png",
 	on_use = minetest.item_eat(1), -- edible when cooked
+	spoil=2,
 })
 -----------------------------------------------------------------------------------------------
 -- FERN TUBER
@@ -50,6 +52,7 @@ minetest.register_alias("archaeplantae:ferntuber",      "ferns:ferntuber")
 minetest.register_craftitem("ferns:ferntuber", {
 	description = "Fern Tuber",
 	inventory_image = "ferns_ferntuber.png",
+	spoil=5,
 })
 minetest.register_craft({
 	type = "cooking",
@@ -64,6 +67,7 @@ minetest.register_craftitem("ferns:ferntuber_roasted", {
 	description = "Roasted Fern Tuber",
 	inventory_image = "ferns_ferntuber_roasted.png",
 	on_use = minetest.item_eat(3),
+	spoil=2,
 })
 -----------------------------------------------------------------------------------------------
 -- HORSETAIL  (EQUISETUM) --> GREEN DYE https://en.wikipedia.org/wiki/Equisetum
